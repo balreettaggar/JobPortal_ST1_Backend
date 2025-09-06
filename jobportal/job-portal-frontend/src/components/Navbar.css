@@ -1,0 +1,183 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black; /* Updated Theme */
+  padding: 12px 40px;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #ffffff; /* White logo for contrast */
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #d1fae5; /* Light contrasting hover */
+}
+
+/* =======================
+   Auth Section (Navbar Right)
+======================= */
+.auth-section {
+  display: flex;
+  align-items: center;
+}
+
+.auth-section button {
+  margin-left: 10px;
+  padding: 8px 14px;
+  border: none;
+  background: #1f7a76; /* Darker teal for buttons */
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.auth-section button:hover {
+  background: #27988b; /* Lighter teal hover */
+}
+
+.btn-logout {
+  background: #dc3545;
+}
+
+.btn-logout:hover {
+  background: #b52a37;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  background: #1f7a76; /* Avatar teal */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 8px;
+  font-size: 0.95rem;
+  color: white;
+}
+
+/* =======================
+   Auth Modal
+======================= */
+.auth-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.auth-modal-content {
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 10px;
+  width: 380px;
+  max-width: 90%;
+  position: relative;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.auth-modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #1f2937; /* Dark text for contrast */
+}
+
+.auth-modal-content input {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease;
+}
+
+.auth-modal-content input:focus {
+  border-color: #2ca7a0; /* Teal focus */
+  outline: none;
+}
+
+.auth-modal-content button {
+  width: 100%;
+  padding: 10px;
+  background: #2ca7a0; /* Teal button */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 8px;
+  transition: background 0.3s ease;
+}
+
+.auth-modal-content button:hover {
+  background: #1f7a76; /* Darker teal hover */
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.close:hover {
+  color: #dc3545;
+}
+
+.toggle-auth {
+  text-align: center;
+  margin-top: 14px;
+  cursor: pointer;
+  color: #2ca7a0; /* Teal link */
+  font-size: 0.9rem;
+}
+
+.toggle-auth:hover {
+  text-decoration: underline;
+}
+
+/* =======================
+   Animations
+======================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}

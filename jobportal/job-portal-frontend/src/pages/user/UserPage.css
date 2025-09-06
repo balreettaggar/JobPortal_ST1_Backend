@@ -1,0 +1,299 @@
+/* ===== User Page Styling ===== */
+
+/* .hero {
+  text-align: center;
+  padding: 60px;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  border-bottom: 4px solid #4a67d6;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 50px 0;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  width: 220px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.reviews {
+  text-align: center;
+  padding: 40px;
+  background: #f4f4ff;
+  color: #333;
+}
+
+.reviews h2 {
+  margin-bottom: 20px;
+  color: #6e8efb;
+}
+.card h3 {
+  margin-top: 15px;
+  font-size: 1.2rem;
+}
+.card svg {
+  margin-bottom: 10px;
+} */
+
+
+
+/* ===== User Page Styling (Upgraded) ===== */
+
+/* Hero Section */
+/* Hero Section */
+/* ===== User Page Styling (Purple-Pink Gradient Theme) ===== */
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #2ca7a0, #1f7a76); /* teal gradient */
+  color: #ffffff;
+  border-bottom: 4px solid #ffb347; /* contrasting orange */
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+  animation: slideDown 1.2s ease;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  color: #e0f7f4; /* lighter contrasting text */
+  animation: fadeIn 2s ease-in;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: #ffb347; /* contrasting orange */
+  color: #1f3a3a; /* dark text for contrast */
+  font-weight: bold;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.cta-btn:hover {
+  background: #ffce54;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+}
+
+/* Features Section */
+.features-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  flex-wrap: wrap;
+  margin: 60px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  flex: 1;
+}
+
+.card {
+  background: #ffffff;
+  padding: 30px 20px;
+  width: 240px;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  text-align: center;
+  font-weight: bold;
+  color: #1f3a3a;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,179,71,0.1); /* orange glow */
+  transition: top 0.5s ease;
+}
+
+.card:hover::before {
+  top: 0;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 28px rgba(255,179,71,0.25);
+}
+
+.card h3 {
+  margin-top: 15px;
+  font-size: 1.3rem;
+  color: #2ca7a0; /* gradient-start color */
+}
+
+.card svg {
+  margin-bottom: 10px;
+  fill: #1f7a76; /* gradient-end color */
+  animation: bounce 2s infinite;
+}
+
+/* Right Side Info */
+.features-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  max-width: 400px;
+}
+
+.features-info h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #ffb347, #ffce54); /* contrasting gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.features-info p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1f3a3a;
+}
+
+/* Reviews Section */
+.reviews {
+  text-align: center;
+  padding: 50px 20px;
+  background: #f0fdf4; /* light complementary background */
+  color: #1f3a3a;
+  animation: fadeIn 2.5s ease-in-out;
+}
+
+.reviews h2 {
+  margin-bottom: 25px;
+  font-size: 2rem;
+  background: linear-gradient(to right, #ffb347, #ffce54);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.reviews p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  opacity: 0.85;
+  animation: slideUp 1s ease-in-out;
+}
+
+/* Companies Marquee */
+.companies {
+  background: #ffffff;
+  padding: 40px 0;
+  border-top: 3px solid #2ca7a0;
+  border-bottom: 3px solid #1f7a76;
+  margin-top: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.companies h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  background: linear-gradient(to right, #ffb347, #ffce54);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.marquee {
+  display: inline-block;
+  animation: scroll 25s linear infinite;
+}
+
+.marquee img {
+  height: 60px;
+  margin: 0 40px;
+  filter: grayscale(40%);
+  transition: filter 0.3s ease;
+}
+
+.marquee img:hover {
+  filter: grayscale(0%) drop-shadow(0 2px 5px rgba(255,179,71,0.3));
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .features-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .features-info {
+    max-width: 100%;
+    text-align: center;
+  }
+}

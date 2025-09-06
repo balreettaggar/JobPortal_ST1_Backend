@@ -1,0 +1,66 @@
+.postjob-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px;
+  background: linear-gradient(135deg, #2ca7a0, #1f7a76);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.postjob-title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.postjob-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #444;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+.postjob-btn {
+  padding: 12px;
+  background: #ffb347;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.postjob-btn:hover {
+  background: #45a049;
+}
+
+@media (max-width: 768px) {
+  .postjob-form {
+    grid-template-columns: 1fr;
+  }
+}

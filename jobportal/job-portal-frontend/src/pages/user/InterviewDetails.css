@@ -1,0 +1,130 @@
+/* InterviewDetails.css */
+.details-container {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 40px;
+  background: linear-gradient(135deg, #2ca7a0, #1f7a76);
+  border-radius: 16px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  font-family: "Inter", sans-serif;
+}
+
+/* Header */
+.details-header {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #1a1a1a;
+}
+
+/* Job Card */
+.details-card {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.details-card h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.role-type {
+  margin-top: 6px;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+/* Resume Section */
+.resume-section {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.resume-section span {
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.upload-btn {
+  background: #e5e7eb;
+  color: #111827;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.upload-btn:hover {
+  background: #d1d5db;
+}
+
+/* Options Section */
+.options {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.options h4 {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #111827;
+}
+
+.options-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.options-group button {
+  padding: 8px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f9fafb;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.options-group button:hover {
+  background: #f3f4f6;
+}
+
+.options-group button.active {
+  background: #facc15; /* Yellow highlight */
+  border-color: #facc15;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+/* Start Practice Button */
+.start-btn {
+  width: 100%;
+  padding: 14px;
+  background: #ffb347;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.start-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 12px rgba(249, 115, 22, 0.3);
+}
