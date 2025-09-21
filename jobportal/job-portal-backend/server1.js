@@ -11,9 +11,7 @@ app.use(express.json());
 
 // ✅ MongoDB connection
 mongoose.connect(
-  "mongodb+srv://ahujabhavisha:egj9B2wUIhBDxYyH@cluster0.cjwzk5b.mongodb.net/jobportal?retryWrites=true&w=majority&appName=Cluster0",
-  { useNewUrlParser: true, useUnifiedTopology: true }
-)
+ process.env.MONGO_URI)
 .then(() => console.log("✅ MongoDB connected"))
 .catch((err) => console.error("❌ MongoDB connection error:", err));
 
