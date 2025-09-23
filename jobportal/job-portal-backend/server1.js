@@ -1,4 +1,4 @@
-// server.js
+require("dotenv").config(); // ✅ Load .env variables first
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -10,12 +10,16 @@ app.use(cors());
 app.use(express.json());
 
 // ✅ MongoDB connection
-mongoose.connect(
- process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
 .then(() => console.log("✅ MongoDB connected"))
 .catch((err) => console.error("❌ MongoDB connection error:", err));
 
-// ✅ Score Schema
+// =====================
+// Score Schema & Model
+// =====================
 const scoreSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true },
@@ -27,34 +31,27 @@ const scoreSchema = new mongoose.Schema({
 
 const Score = mongoose.model("Score", scoreSchema);
 
-// ✅ POST route to save score
+// POST route to save score
 app.post("/api/scores", async (req, res) => {
   try {
     const { name, email, category, score, total } = req.body;
 
     if (!name || !email) {
-      return res.status(400).json({ error: "userId, name, and email are required" });
+      return res.status(400).json({ error: "name and email are required" });
     }
 
-    const newScore = new Score({
-      name,
-      email,
-      category,
-      score,
-      total,
-    });
-
+    const newScore = new Score({ name, email, category, score, total });
     const savedScore = await newScore.save();
-    console.log("Saved Score:", savedScore);
 
-    res.json(savedScore); // return full saved object
+    console.log("Saved Score:", savedScore);
+    res.json(savedScore);
   } catch (err) {
     console.error("Error saving score:", err);
     res.status(500).json({ error: err.message });
   }
 });
 
-// ✅ GET route to fetch all scores
+// GET route to fetch all scores
 app.get("/api/scores", async (req, res) => {
   try {
     const scores = await Score.find().sort({ date: -1 });
