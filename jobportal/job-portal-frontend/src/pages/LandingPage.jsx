@@ -6,7 +6,7 @@ export default function LandingPage({ setRole }) {
   const navigate = useNavigate();
 
   const handleEnter = (selectedRole) => {
-    setRole(selectedRole); // fix role globally for session
+    setRole(selectedRole); 
     if (selectedRole === "user") navigate("/user");
     else if (selectedRole === "employer") navigate("/employer");
   };
