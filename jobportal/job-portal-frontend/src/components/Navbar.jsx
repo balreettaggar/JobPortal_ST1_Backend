@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Navbar.css";
 
-export default function Navbar({ user, setUser, role }) {
+export default function Navbar({ user, setUser, role = "user" }) {
   const [showAuth, setShowAuth] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
   const [form, setForm] = useState({ name: "", email: "", password: "" });
@@ -15,22 +15,20 @@ export default function Navbar({ user, setUser, role }) {
     e.preventDefault();
     try {
       if (isLogin) {
-        console.log("hi");
         const res = await axios.post(
           "http://localhost:5000/api/auth/login",
-          { email: form.email, password: form.password, role }, // send fixed role
+          { email: form.email, password: form.password, role },
           { withCredentials: true }
         );
-        console.log("Response:", res);
 
-      const user = res.data.user;
-      console.log("User object:", user);
-
-      localStorage.setItem("user", JSON.stringify(user));
-      localStorage.setItem("userId", user._id);
-      localStorage.setItem("email", user.email);
-      localStorage.setItem("role", user.role);
-      setUser(user);
+        const user = res.data.user;
+        if (user) {
+          localStorage.setItem("user", JSON.stringify(user));
+          localStorage.setItem("userId", user._id);
+          localStorage.setItem("email", user.email);
+          localStorage.setItem("role", user.role);
+          setUser(user);
+        }
       } else {
         await axios.post(
           "http://localhost:5000/api/auth/signup",
@@ -61,6 +59,8 @@ export default function Navbar({ user, setUser, role }) {
     }
   };
 
+  const capitalize = (str) => (str ? str.charAt(0).toUpperCase() + str.slice(1) : "User");
+
   return (
     <>
       <nav className="navbar">
@@ -74,7 +74,7 @@ export default function Navbar({ user, setUser, role }) {
         <div className="auth-section">
           {user ? (
             <>
-              <div className="avatar">{user.name[0].toUpperCase()}</div>
+              <div className="avatar">{user?.name ? user.name[0].toUpperCase() : "U"}</div>
               <button className="btn-logout" onClick={handleLogout}>Logout</button>
             </>
           ) : (
@@ -86,7 +86,7 @@ export default function Navbar({ user, setUser, role }) {
                   setShowAuth(true);
                 }}
               >
-                Login as {role.charAt(0).toUpperCase() + role.slice(1)}
+                Login as {capitalize(role)}
               </button>
               <button
                 className="btn-login"
@@ -95,7 +95,7 @@ export default function Navbar({ user, setUser, role }) {
                   setShowAuth(true);
                 }}
               >
-                Signup as {role.charAt(0).toUpperCase() + role.slice(1)}
+                Signup as {capitalize(role)}
               </button>
             </>
           )}
@@ -105,12 +105,8 @@ export default function Navbar({ user, setUser, role }) {
       {showAuth && (
         <div className="auth-modal">
           <div className="auth-modal-content">
-            <span className="close" onClick={() => setShowAuth(false)}>
-              &times;
-            </span>
-            <h2>
-              {isLogin ? "Login" : "Signup"} as {role.charAt(0).toUpperCase() + role.slice(1)}
-            </h2>
+            <span className="close" onClick={() => setShowAuth(false)}>&times;</span>
+            <h2>{isLogin ? "Login" : "Signup"} as {capitalize(role)}</h2>
 
             <form onSubmit={handleAuthSubmit}>
               {!isLogin && (
